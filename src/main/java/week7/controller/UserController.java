@@ -14,8 +14,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
     @ResponseBody
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String root() throws JsonProcessingException {
