@@ -11,11 +11,12 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <mybatis:scan base-package="repository"/>
+    <mybatis:scan base-package="week7.repository"/>
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:common/mybatis.xml"/>
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
     </bean>
     <tx:annotation-driven proxy-target-class="true"/>
     <bean id="transactionManager"
